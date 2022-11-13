@@ -109,7 +109,6 @@ func (cmd *ActivityCmd) Run(binds *frk.Binds) error {
 				} else {
 					title = utils.Str(*v.Comment.Body).Plain().Cut().String()
 				}
-
 			case *github.PullRequestEvent:
 				htmlURL = *v.PullRequest.HTMLURL
 				title = utils.Str(*v.PullRequest.Title).Plain().Cut().String()
