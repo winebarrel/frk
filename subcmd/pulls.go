@@ -80,7 +80,7 @@ func (cmd *PullsCmd) Run(binds *frk.Binds) error {
 		fmt.Printf("### %s\n", i.Repo)
 
 		for _, pr := range pullRequests {
-			fmt.Printf("[%s](%s):", *pr.Title, *pr.HTMLURL)
+			fmt.Printf("- [%s](%s):", *pr.Title, *pr.HTMLURL)
 
 			if pr.Body != nil && *pr.Body != "" {
 				fmt.Printf(" (%s)", utils.Cut(utils.Plain(*pr.Body)))
