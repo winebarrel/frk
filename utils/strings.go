@@ -49,5 +49,5 @@ func (s Str) PayloadType() Str {
 	str = strings.ReplaceAll(str, "Event", "")
 	str = regexp.MustCompile(`.*Comment`).ReplaceAllString(str, "Comment")
 	str = strings.ReplaceAll(str, "Issues", "Issue")
-	return s.Underscore()
+	return Str(str).Underscore()
 }
