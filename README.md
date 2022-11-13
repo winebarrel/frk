@@ -7,7 +7,7 @@ frk is summary generator for your GitHub activities.
 ## Installation
 
 ```
-brew install winebarrel/frk/fkr
+brew install winebarrel/frk/frk
 ```
 
 ## Usage
