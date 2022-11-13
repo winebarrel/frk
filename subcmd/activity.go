@@ -78,7 +78,7 @@ func (cmd *ActivityCmd) Run(binds *frk.Binds) error {
 		var htmlURL string
 
 		for _, e := range events {
-			payloadType := utils.PayloadType(*e.Type)
+			payloadType := utils.Str(*e.Type).PayloadType().String()
 			payload, err := e.ParsePayload()
 
 			if err != nil {
@@ -89,30 +89,30 @@ func (cmd *ActivityCmd) Run(binds *frk.Binds) error {
 			case *github.IssueCommentEvent:
 				htmlURL = *v.Comment.HTMLURL
 				title = fmt.Sprintf("%s (%s)",
-					utils.Cut(utils.Plain(*v.Comment.Body)),
-					utils.CutN(utils.Plain(*v.Issue.Title), 30))
+					utils.Str(*v.Comment.Body).Plain().Cut().String(),
+					utils.Str(*v.Issue.Title).Plain().CutN(30).String())
 			case *github.CommitCommentEvent:
 				htmlURL = *v.Comment.HTMLURL
-				title = utils.Cut(utils.Plain(*v.Comment.Body))
+				title = utils.Str(*v.Comment.Body).Plain().Cut().String()
 			case *github.IssuesEvent:
 				payloadType = fmt.Sprintf("%s_%s", *v.Action, payloadType)
 				htmlURL = *v.Issue.HTMLURL
-				title = utils.Cut(utils.Plain(*v.Issue.Title))
+				title = utils.Str(*v.Issue.Title).Plain().Cut().String()
 			case *github.PullRequestReviewCommentEvent:
 				payloadType = "comment"
 				htmlURL = *v.Comment.HTMLURL
 
 				if v.PullRequest.Title != nil {
 					title = fmt.Sprintf("%s (%s)",
-						utils.Cut(utils.Plain(*v.Comment.Body)),
-						utils.CutN(utils.Plain(*v.PullRequest.Title), 30))
+						utils.Str(*v.Comment.Body).Plain().Cut().String(),
+						utils.Str(*v.PullRequest.Title).Plain().CutN(30))
 				} else {
-					title = utils.Cut(utils.Plain(*v.Comment.Body))
+					title = utils.Str(*v.Comment.Body).Plain().Cut().String()
 				}
 
 			case *github.PullRequestEvent:
 				htmlURL = *v.PullRequest.HTMLURL
-				title = utils.Cut(utils.Plain(*v.PullRequest.Title))
+				title = utils.Str(*v.PullRequest.Title).Plain().Cut().String()
 			default:
 				panic(fmt.Sprintf("unimplemented event type: %T", v))
 			}

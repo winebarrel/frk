@@ -83,7 +83,7 @@ func (cmd *PullsCmd) Run(binds *frk.Binds) error {
 			fmt.Printf("- [%s](%s):", *pr.Title, *pr.HTMLURL)
 
 			if pr.Body != nil && *pr.Body != "" {
-				fmt.Printf(" (%s)", utils.Cut(utils.Plain(*pr.Body)))
+				fmt.Printf(" (%s)", utils.Str(*pr.Body).Plain().Cut())
 			}
 
 			fmt.Printf(" %s\n", pr.CreatedAt.Local().Format("2006-01-02"))
