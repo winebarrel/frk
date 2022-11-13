@@ -1,7 +1,6 @@
 # frk
 
 frk is summary generator for your GitHub activities.
-
 (Golang port of [pepabo/furik](https://github.com/pepabo/furik))
 
 ## Installation
