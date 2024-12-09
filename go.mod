@@ -3,7 +3,7 @@ module github.com/winebarrel/frk
 go 1.19
 
 require (
-	github.com/alecthomas/kong v1.4.0
+	github.com/alecthomas/kong v1.6.0
 	github.com/araddon/dateparse v0.0.0-20210429162001-6b43995a97de
 	github.com/cheggaaa/pb/v3 v3.1.5
 	github.com/google/go-github/v48 v48.2.0
