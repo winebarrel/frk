@@ -3,11 +3,11 @@ module github.com/winebarrel/frk
 go 1.19
 
 require (
-	github.com/alecthomas/kong v1.7.0
+	github.com/alecthomas/kong v1.8.0
 	github.com/araddon/dateparse v0.0.0-20210429162001-6b43995a97de
 	github.com/cheggaaa/pb/v3 v3.1.6
 	github.com/google/go-github/v48 v48.2.0
-	golang.org/x/oauth2 v0.25.0
+	golang.org/x/oauth2 v0.26.0
 )
 
 require (
