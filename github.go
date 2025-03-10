@@ -7,7 +7,7 @@ import (
 	"time"
 
 	"github.com/cheggaaa/pb/v3"
-	"github.com/google/go-github/v48/github"
+	"github.com/google/go-github/v69/github"
 	"golang.org/x/oauth2"
 )
 
@@ -228,10 +228,10 @@ func (gh *Github) AllRepoNames() ([]string, error) {
 
 func (gh *Github) RepoNames(login string) ([]string, error) {
 	allRepos := []*github.Repository{}
-	opt := &github.RepositoryListOptions{}
+	opt := &github.RepositoryListByUserOptions{}
 
 	for {
-		repos, resp, err := gh.Client.Repositories.List(context.Background(), login, opt)
+		repos, resp, err := gh.Client.Repositories.ListByUser(context.Background(), login, opt)
 
 		if err != nil {
 			return nil, err
