@@ -5,7 +5,7 @@ go 1.23.0
 toolchain go1.24.1
 
 require (
-	github.com/alecthomas/kong v1.9.0
+	github.com/alecthomas/kong v1.10.0
 	github.com/araddon/dateparse v0.0.0-20210429162001-6b43995a97de
 	github.com/cheggaaa/pb/v3 v3.1.7
 	github.com/google/go-github/v70 v70.0.0
