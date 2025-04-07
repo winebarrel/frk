@@ -9,6 +9,7 @@ require (
 	github.com/araddon/dateparse v0.0.0-20210429162001-6b43995a97de
 	github.com/cheggaaa/pb/v3 v3.1.7
 	github.com/google/go-github/v70 v70.0.0
+	github.com/google/go-github/v71 v71.0.0
 	golang.org/x/oauth2 v0.29.0
 )
 
