@@ -6,7 +6,7 @@ import (
 	"time"
 
 	"github.com/araddon/dateparse"
-	"github.com/google/go-github/v70/github"
+	"github.com/google/go-github/v71/github"
 	"github.com/winebarrel/frk"
 	"github.com/winebarrel/frk/utils"
 )
